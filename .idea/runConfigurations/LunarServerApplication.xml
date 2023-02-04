@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="LunarServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <module name="lunar-server" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.nevermore.lunar.server.LunarServerApplication" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.nevermore.lunar.server.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

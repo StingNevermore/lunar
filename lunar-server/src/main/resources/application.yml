@@ -1,0 +1,5 @@
+spring:
+  profiles:
+    active: @activateProfile@
+mybatis-plus:
+  mapper-locations: "classpath*:/mapper/**/*.xml"
