@@ -15,9 +15,9 @@
     <name>lunar</name>
 
     <properties>
+        <revision>0.0.1-SNAPSHOT</revision>
         <java.version>17</java.version>
         <kotlin.version>1.8.10</kotlin.version>
-        <revision>0.0.1-SNAPSHOT</revision>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -77,6 +77,11 @@
                 <artifactId>kotlin-maven-allopen</artifactId>
                 <version>${kotlin.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-lombok</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>com.alibaba</groupId>
@@ -129,6 +134,7 @@
                     <configuration>
                         <compilerPlugins>
                             <plugin>spring</plugin>
+                            <plugin>lombok</plugin>
                         </compilerPlugins>
                     </configuration>
                 </plugin>
