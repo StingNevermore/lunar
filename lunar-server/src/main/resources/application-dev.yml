@@ -1,17 +1,13 @@
 spring:
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource
+    type: com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceWrapper
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:lunar;MODE=MySQL;DATABASE_TO_LOWER=TRUE;USER=sa
     druid:
       initial-size: 10
       max-active: 20
       validation-query: SELECT 1
-  sql:
-    init:
-      schema-locations: "classpath:sql/init.sql"
-      data-locations: "classpath:sql/data.sql"
-  
+
   h2:
     console:
       enabled: true
