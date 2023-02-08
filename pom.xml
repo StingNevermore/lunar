@@ -151,7 +151,7 @@
                             <groupId>org.projectlombok</groupId>
                             <artifactId>lombok</artifactId>
                             <version>${lombok.version}</version>
-                            <scope>provided</scope>
+                            <scope>compile</scope>
                         </dependency>
                     </dependencies>
                 </plugin>
@@ -200,10 +200,10 @@
                 <activateProfile>dev</activateProfile>
             </properties>
             <modules>
-                <module>lunar-server</module>
-                <module>lunar-component</module>
-                <module>lunar-runner</module>
-                <module>lunar-framework</module>
+                <module>lunar-backend/lunar-server</module>
+                <module>lunar-backend/lunar-component</module>
+                <module>lunar-backend/lunar-runner</module>
+                <module>lunar-backend/lunar-framework</module>
             </modules>
         </profile>
         <profile>
@@ -212,10 +212,10 @@
                 <activateProfile>testing</activateProfile>
             </properties>
             <modules>
-                <module>lunar-server</module>
-                <module>lunar-component</module>
-                <module>lunar-runner</module>
-                <module>lunar-framework</module>
+                <module>lunar-backend/lunar-server</module>
+                <module>lunar-backend/lunar-component</module>
+                <module>lunar-backend/lunar-runner</module>
+                <module>lunar-backend/lunar-framework</module>
             </modules>
         </profile>
         <profile>
@@ -224,10 +224,10 @@
                 <activateProfile>prod</activateProfile>
             </properties>
             <modules>
-                <module>lunar-server</module>
-                <module>lunar-component</module>
-                <module>lunar-runner</module>
-                <module>lunar-framework</module>
+                <module>lunar-backend/lunar-server</module>
+                <module>lunar-backend/lunar-component</module>
+                <module>lunar-backend/lunar-runner</module>
+                <module>lunar-backend/lunar-framework</module>
             </modules>
         </profile>
         <profile>
@@ -236,7 +236,7 @@
                 <activateProfile>framework</activateProfile>
             </properties>
             <modules>
-                <module>lunar-framework</module>
+                <module>lunar-backend/lunar-framework</module>
             </modules>
         </profile>
     </profiles>
