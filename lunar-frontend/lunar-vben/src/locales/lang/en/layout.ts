@@ -1,5 +1,5 @@
 export default {
-  footer: { onlinePreview: 'Preview', onlineDocument: 'Document' },
+  footer: { onlinePreview: 'Preview', onlineDocument: 'Document', icp: '冀ICP备2022026116号-1' },
   header: {
     // user dropdown
     dropdownItemDoc: 'Document',

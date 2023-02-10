@@ -6,3 +6,5 @@ export const DOC_URL = 'https://doc.vvbin.cn/';
 
 // site url
 export const SITE_URL = 'https://vben.vvbin.cn/';
+
+export const BEIAN_URL = 'https://beian.miit.gov.cn/';

@@ -1,5 +1,5 @@
 export default {
-  footer: { onlinePreview: '在线预览', onlineDocument: '在线文档' },
+  footer: { onlinePreview: '在线预览', onlineDocument: '在线文档', icp: '冀ICP备2022026116号-1' },
   header: {
     // user dropdown
     dropdownItemDoc: '文档',
