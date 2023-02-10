@@ -17,6 +17,10 @@ import { setupI18n } from '/@/locales/setupI18n';
 import { registerGlobComp } from '/@/components/registerGlobComp';
 
 import { isDevMode } from './utils/env';
+import 'element-plus/dist/index.css';
+import ElementPlus from 'element-plus';
+import VForm3 from '@/../lib/vform/designer.umd.js';
+import '../lib/vform/designer.style.css';
 
 if (isDevMode()) {
   import('ant-design-vue/es/style');
@@ -59,9 +63,11 @@ async function bootstrap() {
   // 配置全局错误处理
   setupErrorHandle(app);
 
+  app.use(ElementPlus);
+  app.use(VForm3);
+
   // https://next.router.vuejs.org/api/#isready
   // await router.isReady();
-
   app.mount('#app');
 }
 

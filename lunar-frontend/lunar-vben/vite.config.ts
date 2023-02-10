@@ -1,7 +1,7 @@
-import type { UserConfig, ConfigEnv } from 'vite';
+import type { ConfigEnv, UserConfig } from 'vite';
+import { loadEnv } from 'vite';
 import pkg from './package.json';
 import dayjs from 'dayjs';
-import { loadEnv } from 'vite';
 import { resolve } from 'path';
 import { generateModifyVars } from './build/generate/generateModifyVars';
 import { createProxy } from './build/vite/proxy';
@@ -50,6 +50,10 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
           find: /\/#\//,
           replacement: pathResolve('types') + '/',
         },
+        {
+          find: '@',
+          replacement: resolve(__dirname, 'src'),
+        },
       ],
     },
     server: {
@@ -81,6 +85,9 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       // Turning off brotliSize display can slightly reduce packaging time
       brotliSize: false,
       chunkSizeWarningLimit: 2000,
+      commonjsOptions: {
+        include: /node_modules|lib/,
+      },
     },
     define: {
       // setting vue-i18-next
@@ -109,6 +116,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         '@iconify/iconify',
         'ant-design-vue/es/locale/zh_CN',
         'ant-design-vue/es/locale/en_US',
+        '@/../lib/vform/designer.umd.js',
       ],
     },
   };

@@ -3,4 +3,6 @@ export default {
   about: 'About',
   workbench: 'Workbench',
   analysis: 'Analysis',
+  editor: 'FormEditor',
+  form: 'Form',
 };

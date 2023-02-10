@@ -31,6 +31,22 @@ const dashboard: AppRouteModule = {
         title: t('routes.dashboard.workbench'),
       },
     },
+    {
+      path: 'editor',
+      name: 'Editor',
+      component: () => import('/@/views/dashboard/editor/index.vue'),
+      meta: {
+        title: t('routes.dashboard.editor'),
+      },
+    },
+    {
+      path: 'form',
+      name: 'Form',
+      component: () => import('/@/views/dashboard/form/index.vue'),
+      meta: {
+        title: t('routes.dashboard.form'),
+      },
+    },
   ],
 };
 
