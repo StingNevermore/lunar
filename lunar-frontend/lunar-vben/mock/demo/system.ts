@@ -56,7 +56,17 @@ const deptList = (() => {
             remark: '@cword(10,20)',
             'status|1': ['0', '1'],
             parentDept: `${index}`,
-            children: undefined,
+            children: [
+              {
+                id: '0-2-1',
+                deptName: '销售部',
+                orderNo: 1,
+                createTime: '@datetime',
+                remark: 'daaaa',
+                status: 1,
+                parentDept: 1,
+              },
+            ],
           });
         }
         return children;

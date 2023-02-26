@@ -1,9 +1,12 @@
 <template>
   <Footer :class="prefixCls" v-if="getShowLayoutFooter" ref="footerRef">
     <div :class="`${prefixCls}__links`">
-      <div>Copyright &copy;Lunar</div>
+      <!--      <div d>Copyright &copy;Lunar</div>-->
 
-      <a @click="openWindow(BEIAN_URL)">{{ t('layout.footer.icp') }}</a>
+      <!--      <a @click="openWindow(GONGAN_URL)">冀公网安备 13112302000224号</a>-->
+
+      <!--      <a style="margin-left: 10px" @click="openWindow(BEIAN_URL)">{{ t('layout.footer.icp') }}</a>-->
+      <ICPFooter />
     </div>
   </Footer>
 </template>
@@ -14,7 +17,7 @@
 
   import { GithubFilled } from '@ant-design/icons-vue';
 
-  import { BEIAN_URL } from '/@/settings/siteSetting';
+  import { BEIAN_URL, GONGAN_URL } from '/@/settings/siteSetting';
   import { openWindow } from '/@/utils';
 
   import { useI18n } from '/@/hooks/web/useI18n';
@@ -22,10 +25,11 @@
   import { useRouter } from 'vue-router';
   import { useDesign } from '/@/hooks/web/useDesign';
   import { useLayoutHeight } from '../content/useContentViewHeight';
+  import { ICPFooter } from '/@/components/ICPFooter';
 
   export default defineComponent({
     name: 'LayoutFooter',
-    components: { Footer: Layout.Footer, GithubFilled },
+    components: { ICPFooter, Footer: Layout.Footer, GithubFilled },
     setup() {
       const { t } = useI18n();
       const { getShowFooter } = useRootSetting();
@@ -50,6 +54,7 @@
         prefixCls,
         t,
         BEIAN_URL,
+        GONGAN_URL,
         openWindow,
         footerRef,
       };

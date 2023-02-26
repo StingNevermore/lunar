@@ -1,9 +1,9 @@
 package com.nevermore.lunar.framework.configs
 
+import com.baomidou.mybatisplus.test.autoconfigure.MybatisPlusTest
 import com.nevermore.lunar.framework.configs.mock.dao.MockTestDAO
 import org.junit.jupiter.api.Assertions.assertNotNull
 import org.junit.jupiter.api.Test
-import org.mybatis.spring.boot.test.autoconfigure.MybatisTest
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.context.annotation.Import
@@ -13,10 +13,10 @@ import org.springframework.test.context.TestPropertySource
  * @author nevermore
  */
 @SpringBootApplication
-@Import(MybatisConfigs::class)
+@Import(MybatisPlusConfigs::class)
 class MyBatisConfigTestsConfiguration
 
-@MybatisTest
+@MybatisPlusTest
 @TestPropertySource("classpath:application.yml")
 class MyBatisConfigTests(@Autowired private val dao: MockTestDAO) {
 

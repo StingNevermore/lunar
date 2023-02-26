@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @author nevermore
  */
-@SpringBootApplication(scanBasePackages = "com.nevermore.lunar")
+@SpringBootApplication(scanBasePackages = {"com.nevermore.lunar"})
 public class LunarServerApplication {
 
     public static void main(String[] args) {

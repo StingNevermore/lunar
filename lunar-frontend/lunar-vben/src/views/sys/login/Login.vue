@@ -30,6 +30,7 @@
               {{ t('sys.login.signInDesc') }}
             </div>
           </div>
+          <ICPFooter class="vben-layout-footer" />
         </div>
         <div class="flex w-full h-full py-5 xl:h-auto xl:py-0 xl:my-0 xl:w-6/12">
           <div
@@ -41,6 +42,7 @@
             <RegisterForm />
             <MobileForm />
             <QrCodeForm />
+            <!--            <ICPFooter />-->
           </div>
         </div>
       </div>
@@ -49,8 +51,7 @@
 </template>
 <script lang="ts" setup>
   import { computed } from 'vue';
-  import { AppLogo } from '/@/components/Application';
-  import { AppLocalePicker, AppDarkModeToggle } from '/@/components/Application';
+  import { AppDarkModeToggle, AppLocalePicker, AppLogo } from '/@/components/Application';
   import LoginForm from './LoginForm.vue';
   import ForgetPasswordForm from './ForgetPasswordForm.vue';
   import RegisterForm from './RegisterForm.vue';
@@ -60,6 +61,7 @@
   import { useI18n } from '/@/hooks/web/useI18n';
   import { useDesign } from '/@/hooks/web/useDesign';
   import { useLocaleStore } from '/@/store/modules/locale';
+  import { ICPFooter } from '/@/components/ICPFooter';
 
   defineProps({
     sessionTimeout: {

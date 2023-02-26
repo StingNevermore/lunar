@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nevermore.lunar.component.core.dao.LunarEntityDAO">
+
+    <select id="selectByNames" resultType="com.nevermore.lunar.component.core.models.LunarEntity">
+        SELECT *
+        FROM lunar_entity
+        WHERE entity_name IN (
+        <foreach collection="entityNames" item="entityName">
+            #{entityName}
+        </foreach>
+        )
+        ORDER BY create_time DESC ;
+    </select>
+
+    <insert id="insertEntity" parameterType="com.nevermore.lunar.component.core.models.LunarEntity">
+        INSERT
+        INTO lunar_entity (entity_name, create_time, creator_id, `desc`)
+        VALUES (#{entityName}, #{createTime}, #{creatorId}, #{desc})
+    </insert>
+</mapper>

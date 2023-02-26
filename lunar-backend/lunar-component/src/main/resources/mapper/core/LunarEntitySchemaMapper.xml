@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nevermore.lunar.component.core.dao.LunarEntitySchemaDAO">
+
+    <select id="selectByEntityName"
+            resultType="com.nevermore.lunar.component.core.models.LunarEntitySchema">
+        SELECT *
+        FROM lunar_entity_schema
+        WHERE entity_name = #{entityName}
+    </select>
+
+    <insert id="upsert" parameterType="com.nevermore.lunar.component.core.models.LunarEntitySchema">
+        INSERT
+        INTO lunar_entity_schema (`entity_name`, `field_name`,
+        `field_type`, `jdbc_type`, `default_value`, `place_holder`,
+        `create_time`, `creator_id`, `desc`)
+        VALUES
+        <foreach collection="entitySchemas" item="schema" separator=",">
+            (
+            #{schema.entityName},
+            #{schema.fieldName},
+            #{schema.fieldType},
+            #{schema.jdbcType},
+            #{schema.defaultValue},
+            #{schema.placeHolder},
+            #{schema.createTime},
+            #{schema.creatorId},
+            #{schema.desc}
+            )
+        </foreach>
+        /* H2只支持values函数不支持 as row on duplicate key update row_name=row.row_name */
+        ON DUPLICATE key update
+        `field_type`=values(`field_type`),
+        `jdbc_type`=values(`jdbc_type`),
+        `default_value`=values(`default_value`),
+        `place_holder`=values(`place_holder`),
+        `create_time`=values(`create_time`),
+        `creator_id`=values(`creator_id`),
+        `desc`=values(`desc`)
+        ;
+    </insert>
+</mapper>

@@ -1,7 +1,13 @@
 package com.nevermore.lunar.framework.configs.mock;
 
+import lombok.Data;
+
 /**
  * @author nevermore
  */
-public record Lunar(long id, int state, String desc) {
+@Data
+public class Lunar {
+    private long id;
+    private int state;
+    private String desc;
 }
