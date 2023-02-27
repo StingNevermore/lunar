@@ -2,8 +2,8 @@ package com.nevermore.lunar.server;
 
 import com.nevermore.lunar.component.core.models.LunarEntitySchema;
 import com.nevermore.lunar.component.core.service.LunarEntityMiscService;
-import com.nevermore.lunar.server.vo.CommonResult;
 import com.nevermore.lunar.server.vo.CreateEntityVo;
+import com.nevermore.lunar.server.vo.LunarApiResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import static com.nevermore.lunar.server.vo.CommonResult.badRequestResult;
-import static com.nevermore.lunar.server.vo.CommonResult.successResult;
+import static com.nevermore.lunar.server.vo.ResultUtils.badRequestResult;
+import static com.nevermore.lunar.server.vo.ResultUtils.successResult;
 import static java.lang.System.currentTimeMillis;
 import static java.util.Collections.singleton;
 import static org.springframework.http.ResponseEntity.badRequest;
@@ -34,7 +34,7 @@ public class LunarManageController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<CommonResult<?>> createEntity(@RequestBody @Validated CreateEntityVo vo) {
+    public ResponseEntity<LunarApiResult> createEntity(@RequestBody @Validated CreateEntityVo vo) {
         try {
             LunarEntitySchema schema = new LunarEntitySchema(
                     vo.entityName(), vo.fieldName(),

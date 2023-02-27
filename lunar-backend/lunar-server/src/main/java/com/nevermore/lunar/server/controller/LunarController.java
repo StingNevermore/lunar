@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import static com.nevermore.lunar.server.vo.ResultUtils.successResult;
+
 /**
  * @author nevermore
  */
@@ -23,9 +25,9 @@ public class LunarController {
     }
 
     @GetMapping("getList")
-    public CommonResult<?> getList(@PathVariable String resourceSymbol) {
+    public CommonResult getList(@PathVariable String resourceSymbol) {
         log.info("symbol: {}", resourceSymbol);
         lunarDAO.selectOne(1);
-        return CommonResult.successResult();
+        return successResult();
     }
 }

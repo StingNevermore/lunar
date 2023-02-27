@@ -27,8 +27,4 @@ public record CreateEntityVo(
         @NotNull
         String schemaDesc
 ) {
-    public String entityName() {
-        System.out.println(entityName);
-        return entityName;
-    }
 }

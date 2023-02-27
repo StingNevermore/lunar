@@ -5,7 +5,6 @@ import org.camunda.bpm.engine.RuntimeService;
 import org.camunda.bpm.engine.TaskService;
 import org.camunda.bpm.engine.runtime.ProcessInstance;
 import org.camunda.bpm.engine.task.Task;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,12 +21,15 @@ import static org.springframework.http.ResponseEntity.ok;
 @RequestMapping("camunda")
 public class CamundaController {
 
-    @Autowired
-    private RuntimeService runtimeService;
-    @Autowired
-    private RepositoryService repositoryService;
-    @Autowired
-    private TaskService taskService;
+    private final RuntimeService runtimeService;
+    private final RepositoryService repositoryService;
+    private final TaskService taskService;
+
+    public CamundaController(RuntimeService runtimeService, RepositoryService repositoryService, TaskService taskService) {
+        this.runtimeService = runtimeService;
+        this.repositoryService = repositoryService;
+        this.taskService = taskService;
+    }
 
     @RequestMapping("test")
     @ResponseBody
