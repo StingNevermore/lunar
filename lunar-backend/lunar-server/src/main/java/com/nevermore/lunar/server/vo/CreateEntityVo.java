@@ -2,6 +2,7 @@ package com.nevermore.lunar.server.vo;
 
 import com.nevermore.lunar.component.core.models.FieldType;
 import com.nevermore.lunar.component.core.models.JdbcType;
+import com.nevermore.lunar.server.validation.validators.EntityExists;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -11,6 +12,7 @@ import javax.validation.constraints.NotNull;
  */
 public record CreateEntityVo(
         @NotBlank
+        @EntityExists
         String entityName,
         @NotBlank
         String entityDesc,

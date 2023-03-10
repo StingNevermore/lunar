@@ -294,6 +294,7 @@
         <profile>
             <id>allTests</id>
             <properties>
+                <activateProfile>dev</activateProfile>
                 <!--suppress CheckTagEmptyBody -->
                 <test.suite.class></test.suite.class>
             </properties>
